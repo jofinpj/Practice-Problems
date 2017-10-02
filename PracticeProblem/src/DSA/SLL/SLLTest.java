@@ -13,6 +13,8 @@ public class SLLTest {
 
 	private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
 	private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();
+	private PrintStream outPreset = System.out;
+	private PrintStream errPreset = System.err;
 
 	@Before
 	public void setUpStreams() {
@@ -74,7 +76,7 @@ public class SLLTest {
 */
 	@After
 	public void cleanUpStreams() {
-	    System.setOut(null);
-	    System.setErr(null);
+	    System.setOut(outPreset);
+	    System.setErr(errPreset);
 	}
 }
